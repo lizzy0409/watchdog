@@ -366,7 +366,7 @@ const PoolAdd = () => {
                 onClick={() => openModal(1)}
               >
                 <p>
-                  <img src={ETH} alt="eth" width={20} height={20} />
+                  <img src={tokenOne?.logoURI} alt="eth" width={20} height={20} />
                 </p>
                 <p>{tokenOne?.symbol}</p>
                 <p>
@@ -378,7 +378,7 @@ const PoolAdd = () => {
                 onClick={() => openModal(2)}
               >
                 <p>
-                  <img src={ETH} alt="eth" width={20} height={20} />
+                  <img src={tokenTwo?.logoURI} alt="eth" width={20} height={20} />
                 </p>
                 <p>{tokenTwo?.symbol}</p>
                 <p>
