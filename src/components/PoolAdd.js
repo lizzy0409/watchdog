@@ -340,6 +340,11 @@ const PoolAdd = () => {
 
   const isBalanceEnough = isBalanceSufficient(walletBalance, tokenOneVal);
 
+  const closeModal = () => {
+      setIsOpen(false);
+      setSearchQuery("");
+    }
+
   function switchScreen() {}
 
   return (
@@ -394,9 +399,9 @@ const PoolAdd = () => {
                 </p>
               </div>
               {openFee ? (
-                <button onClick={() => setOpenFee(false)}>Hide</button>
+                <button className="feeBtn" onClick={() => setOpenFee(false)}>Hide</button>
               ) : (
-                <button onClick={() => setOpenFee(true)}>Show</button>
+                <button className="feeBtn" onClick={() => setOpenFee(true)}>Show</button>
               )}
             </div>
             {openFee && (
@@ -523,7 +528,7 @@ const PoolAdd = () => {
       <Modal
         open={isOpen}
         footer={null}
-        onCancel={() => setIsOpen(false)}
+        onCancel={() => closeModal()}
         title="Select a token"
       >
         <input
