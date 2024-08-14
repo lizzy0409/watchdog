@@ -96,7 +96,7 @@ const Navbar = (props) => {
     );
   }
   
-  const handleNetworkChange = (e) => {
+  const handleNetworkChange = async (e) => {
     const selectedNetwork = e.target.value;
     
     // Find the network object in the networkList array based on the selected network
@@ -106,10 +106,12 @@ const Navbar = (props) => {
     
     if (selectedNetworkObj) {
       // Set the network image based on the selected network object's img property
-      switchChain({ chainId: selectedNetworkObj.chainId });
-      setNetworkImage(selectedNetworkObj.img);
-      setNetChainId(selectedNetworkObj.chainId);
-      setNetwork(selectedNetwork);
+      await switchChain({ chainId: selectedNetworkObj.chainId });
+      if(chainId === selectedNetworkObj.chainId){
+        setNetworkImage(selectedNetworkObj.img);
+        setNetChainId(selectedNetworkObj.chainId);
+        setNetwork(selectedNetwork);
+      }
     }
   };
   
